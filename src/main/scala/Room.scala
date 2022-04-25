@@ -1,6 +1,6 @@
 case class People(people: Int)
 
-case class Room(name: String, capacity: Int) {
+case class Room(name: String, capacity: Int = 10) {
 
   var rooms = 0
 
