@@ -3,7 +3,9 @@ case class Room(name: String, capacity: Int) {
 
   var rooms = 0
 
-  def enter(people: Person): Boolean = {
+  val people: Person = Person()
+
+  def enter: Boolean = {
     if (capacity - rooms >= people.amount) {
       rooms += people.amount
       true
@@ -11,8 +13,8 @@ case class Room(name: String, capacity: Int) {
     else false
   }
 
-  def leave(people: Person, room: String): Boolean = {
-    if (people.amount > capacity) {
+  def leave: Boolean = {
+    if (rooms >= people.amount) {
       rooms -= people.amount
       false
     }

@@ -13,19 +13,16 @@ class RoomSpec extends AnyFlatSpec with should.Matchers {
 
     it should "allow people to enter the room" in {
 
-      room.enter(person) shouldBe true
-      room.enter(person) shouldBe true
-      room.enter(person) shouldBe true
-      room.enter(person) shouldBe true
-      room.enter(person) shouldBe true
+      room.enter shouldBe true
+      room.enter shouldBe true
+      room.enter shouldBe true
+      room.enter shouldBe true
+      room.enter shouldBe true
     }
 
     it should "disallow people to enter the room if capacity reaches maximum" in {
-      room.enter(person) shouldBe false
+      room.enter shouldBe false
     }
-  }
-
-  it should "allow people to leave the room" in {
   }
 
   it should "report number of people inside the room" in {
