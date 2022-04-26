@@ -3,17 +3,17 @@ case class Room(name: String, capacity: Int) {
 
   var rooms = 0
 
-  def enter(people: People): Boolean = {
-    if (people.people <= capacity) {
-      rooms += people.people
+  def enter(people: Person): Boolean = {
+    if (capacity - rooms >= people.amount) {
+      rooms += people.amount
       true
     }
     else false
   }
 
-  def leave(people: People, room: String): Boolean = {
-    if (people.people > capacity) {
-      rooms -= people.people
+  def leave(people: Person, room: String): Boolean = {
+    if (people.amount > capacity) {
+      rooms -= people.amount
       false
     }
     else true
