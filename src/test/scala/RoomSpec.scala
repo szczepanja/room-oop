@@ -10,7 +10,7 @@ class RoomSpec extends AnyFlatSpec with should.Matchers {
     val maxCapacity = 5
     val room = Room("kitchen", maxCapacity)
 
-    it should "allow people to enter the room" in {
+    it should "allow people to enter" in {
       room.enter shouldBe true
       room.enter shouldBe true
       room.enter shouldBe true
@@ -18,7 +18,7 @@ class RoomSpec extends AnyFlatSpec with should.Matchers {
       room.enter shouldBe true
     }
 
-    it should "disallow people to enter the room if capacity reaches maximum" in {
+    it should "disallow people to enter if capacity reaches maximum" in {
       room.enter shouldBe false
     }
 
@@ -26,12 +26,24 @@ class RoomSpec extends AnyFlatSpec with should.Matchers {
       room.leave shouldBe true
       room.leave shouldBe true
       room.leave shouldBe true
-      room.leave shouldBe true
-      room.leave shouldBe true
     }
 
-    it should "report number of people inside the room" in {
-      room.printStatus shouldBe "Status of people in room kitchen: 5"
+    it should "report number of people inside" in {
+      val peopleInside = 2
+      room.printStatus shouldBe s"Status of people in room kitchen: $peopleInside"
+    }
+  }
+
+  {
+    it should "allow two person to enter, one person to leave and return number of people" in {
+      val maxCapacity = 3
+      val room = Room("dinning-room", maxCapacity)
+
+      room.enter shouldBe true
+      room.enter shouldBe true
+      room.leave shouldBe true
+      room._people shouldBe 1
+
     }
   }
 

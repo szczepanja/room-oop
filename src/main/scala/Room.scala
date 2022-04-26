@@ -21,6 +21,6 @@ case class Room(name: String, capacity: Int) {
     else false
   }
 
-  def printStatus: String = s"Status of people in room $name: $capacity"
+  def printStatus: String = s"Status of people in room $name: " + _people
 
 }
