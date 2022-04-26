@@ -43,7 +43,6 @@ class RoomSpec extends AnyFlatSpec with should.Matchers {
       room.enter shouldBe true
       room.leave shouldBe true
       room._people shouldBe 1
-
     }
   }
 
