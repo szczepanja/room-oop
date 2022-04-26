@@ -1,21 +1,21 @@
 case class Room(name: String, capacity: Int) {
   if (capacity < 0) throw new IllegalStateException
 
-  var rooms = 0
+  var _people = 0
 
   val people: Person = Person()
 
   def enter: Boolean = {
-    if (capacity - rooms >= people.amount) {
-      rooms += people.amount
+    if (capacity - _people >= people.amount) {
+      _people += people.amount
       true
     }
     else false
   }
 
   def leave: Boolean = {
-    if (rooms >= people.amount) {
-      rooms -= people.amount
+    if (_people >= people.amount) {
+      _people -= people.amount
       true
     }
     else false

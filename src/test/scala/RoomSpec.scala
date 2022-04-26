@@ -30,9 +30,9 @@ class RoomSpec extends AnyFlatSpec with should.Matchers {
       room.leave shouldBe true
     }
 
-  }
-
-  it should "report number of people inside the room" in {
+    it should "report number of people inside the room" in {
+      room.printStatus shouldBe "Status of people in room kitchen: 5"
+    }
   }
 
 }
