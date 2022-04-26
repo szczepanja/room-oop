@@ -1,6 +1,5 @@
-case class People(people: Int)
-
 case class Room(name: String, capacity: Int) {
+  if (capacity < 0) throw new IllegalStateException
 
   var rooms = 0
 
@@ -22,9 +21,4 @@ case class Room(name: String, capacity: Int) {
 
   def printStatus: String = s"Status of people in room $name: $capacity"
 
-}
-
-object Main extends App {
-  val room1 = Room("1", 5)
-  val room2 = Room("10", 10)
 }
