@@ -16,9 +16,9 @@ case class Room(name: String, capacity: Int) {
   def leave: Boolean = {
     if (rooms >= people.amount) {
       rooms -= people.amount
-      false
+      true
     }
-    else true
+    else false
   }
 
   def printStatus: String = s"Status of people in room $name: $capacity"
